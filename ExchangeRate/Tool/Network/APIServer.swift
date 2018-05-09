@@ -8,19 +8,14 @@
 
 import Foundation
 import Moya
+import ObjectMapper
 
 let MobAppkey: NSString = "25a4122e2b34f"
 
 // 网络请求结构体
 struct ApiNetwork {
-    
-    let a:NSString
-    let b:Int
-    
-    
-    
     // 请求成功的回调
-    typealias successCallback = (_ result: Any) -> Void
+    typealias successCallback = (_ result: ResponseModel) -> Void
     // 请求失败的回调
     typealias failureCallback = (_ error: MoyaError) -> Void
     
@@ -36,8 +31,10 @@ struct ApiNetwork {
             switch result {
             case let .success(moyaResponse):
                 do {
-                    try success(moyaResponse.mapJSON()) // 测试用JSON数据
+                    try success(Mapper<ResponseModel>().map(JSONObject:moyaResponse.mapJSON())!) // 测试用JSON数据
+                    
                 } catch {
+                    
                     failure(MoyaError.jsonMapping(moyaResponse))
                 }
             case let .failure(error):

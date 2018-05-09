@@ -15,13 +15,12 @@ class IndexViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "index"
-        
         self.view.backgroundColor = UIColor.white
         self.navView()
         // Do any additional setup after loading the view.
     }
     func navView() {
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .add, target: self, action:#selector(IndexViewController.curr))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "All", style: UIBarButtonItemStyle.plain, target: self, action: #selector(IndexViewController.curr))
     }
     @objc func curr() {
         self.navigationController?.pushViewController(CurrencyCodeViewController.init(), animated: true)

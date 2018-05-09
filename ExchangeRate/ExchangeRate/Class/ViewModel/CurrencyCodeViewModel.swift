@@ -12,10 +12,5 @@ import UIKit
 class CurrencyCodeViewModel: ViewModel {
     var list:[CurrencyCodeModel] = [CurrencyCodeModel]()
     
-    
-    
-    
-    
-    
 }
 

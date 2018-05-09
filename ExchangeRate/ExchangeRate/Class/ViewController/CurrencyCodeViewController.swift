@@ -10,15 +10,13 @@ import UIKit
 import ObjectMapper
 
 
-class CurrencyCodeViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class CurrencyCodeViewController: UIViewController {
 
     var viewModel:CurrencyCodeViewModel = CurrencyCodeViewModel.init()
     
     
    lazy var tableView:UITableView = {
-    
             let tab = UITableView.init(frame: self.view.bounds, style: .grouped)
-            tab.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: "cell")
             tab.delegate = self
             tab.dataSource = self
             return tab;
@@ -26,10 +24,7 @@ class CurrencyCodeViewController: UIViewController,UITableViewDelegate,UITableVi
     }()
     func loadList() {
         ApiNetwork.request(target: .currencyQuery, success: { (result ) in
-            let usersArray = [["code": "17", "name": "梅梅"],
-                              ["code": "18", "name": "李雷"]]
-            
-            self.viewModel.list = Mapper<CurrencyCodeModel>().mapArray(JSONArray: usersArray)
+            self.viewModel.list = Mapper<CurrencyCodeModel>().mapArray(JSONArray: result.result as! [[String : Any]])
             self.tableView.reloadData()
         }) { (error) in
             print(error)
@@ -38,6 +33,7 @@ class CurrencyCodeViewController: UIViewController,UITableViewDelegate,UITableVi
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "货币汇总"
         self.view.addSubview(self.tableView)
         self.loadList()
         
@@ -48,29 +44,28 @@ class CurrencyCodeViewController: UIViewController,UITableViewDelegate,UITableVi
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+}
+extension CurrencyCodeViewController: UITableViewDelegate, UITableViewDataSource{
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.list.count
-    }
-    func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
-        return 1
-    }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = viewModel.list[indexPath.row].code! as String
-        cell.detailTextLabel?.text = viewModel.list[indexPath.row].name! as String
-        return cell;
-    }
+        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            return viewModel.list.count
+        }
+        func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
+            return 1
+        }
+        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            let identifier = "cell"
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+            var cell:UITableViewCell? = tableView.dequeueReusableCell(withIdentifier: identifier)
+            if cell == nil {
+                cell = UITableViewCell.init(style: .value1, reuseIdentifier: identifier)
+                cell?.accessoryType = .disclosureIndicator
+            }
+            cell?.textLabel?.text = viewModel.list[indexPath.row].code! as String
+            cell?.detailTextLabel?.text = viewModel.list[indexPath.row].name! as String
+            return cell!;
+        }
+        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
 }
