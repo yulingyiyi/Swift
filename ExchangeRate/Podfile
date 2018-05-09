@@ -7,7 +7,8 @@ target 'ExchangeRate' do
   
   pod 'Moya/RxSwift', '~> 11.0'
   pod 'ObjectMapper', '~> 3.1'
-
+  pod 'SnapKit', '~> 4.0.0'
+  
   # Pods for ExchangeRate
 
 end

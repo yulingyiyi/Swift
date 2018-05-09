@@ -6,9 +6,9 @@
 //  Copyright © 2018 yuling. All rights reserved.
 //
 
-import UIKit
+import ObjectMapper
 
-class RmbquotModel: NSObject {
+class RmbquotModel: Model {
 //    银行代码
     var bank:NSString?
 //    银行折算价(中间价)
@@ -32,5 +32,17 @@ class RmbquotModel: NSObject {
 //    发布时间
     var time:NSString?
 
+    override func mapping(map: Map) {
+        bank <- map["bank"]
+        bankConversionPri <- map["bankConversionPri"]
+        bankName <- map["bankName"]
+        currencyCode <- map["currencyCode"]
+        currencyName <- map["currencyName"]
+        date <- map["date"]
+        fBuyPri <- map["fBuyPri"]
+        fSellPri <- map["fSellPri"]
+        mBuyPri <- map["mBuyPri"]
+        mSellPri <- map["mSellPri"]
+    }
     
 }

@@ -10,6 +10,7 @@
 		3F231AB3C1A5F770953CA736 /* Pods_ExchangeRate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3471889E1A17A364CDB61A6E /* Pods_ExchangeRate.framework */; };
 		6E921D4C20A27DE500D54B72 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E921D4B20A27DE500D54B72 /* ResponseModel.swift */; };
 		6E921D4E20A2D4D000D54B72 /* Observable+ObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E921D4D20A2D4D000D54B72 /* Observable+ObjectMapper.swift */; };
+		6E921D5220A3045300D54B72 /* IndexeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E921D5120A3045300D54B72 /* IndexeCollectionViewCell.swift */; };
 		6EF34C3A20A12E25002A4ED8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF34C3920A12E25002A4ED8 /* AppDelegate.swift */; };
 		6EF34C3F20A12E25002A4ED8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EF34C3D20A12E25002A4ED8 /* Main.storyboard */; };
 		6EF34C4120A12E46002A4ED8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EF34C4020A12E46002A4ED8 /* Assets.xcassets */; };
@@ -23,7 +24,7 @@
 		6EF34C6420A14227002A4ED8 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF34C6320A14227002A4ED8 /* ViewModel.swift */; };
 		6EF34C6620A14241002A4ED8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF34C6520A14241002A4ED8 /* ViewController.swift */; };
 		6EF34C6820A14261002A4ED8 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF34C6720A14261002A4ED8 /* Model.swift */; };
-		6EF34C6A20A1427C002A4ED8 /* IdnexViewModelq.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF34C6920A1427C002A4ED8 /* IdnexViewModelq.swift */; };
+		6EF34C6A20A1427C002A4ED8 /* RMBQuoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF34C6920A1427C002A4ED8 /* RMBQuoteViewModel.swift */; };
 		6EF34C6E20A14344002A4ED8 /* APIServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF34C6D20A14344002A4ED8 /* APIServer.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +33,7 @@
 		38BF7D5519AA7219C92D49A5 /* Pods-ExchangeRate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExchangeRate.release.xcconfig"; path = "Pods/Target Support Files/Pods-ExchangeRate/Pods-ExchangeRate.release.xcconfig"; sourceTree = "<group>"; };
 		6E921D4B20A27DE500D54B72 /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
 		6E921D4D20A2D4D000D54B72 /* Observable+ObjectMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+ObjectMapper.swift"; sourceTree = "<group>"; };
+		6E921D5120A3045300D54B72 /* IndexeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexeCollectionViewCell.swift; sourceTree = "<group>"; };
 		6EF34C3620A12E25002A4ED8 /* ExchangeRate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExchangeRate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EF34C3920A12E25002A4ED8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6EF34C3E20A12E25002A4ED8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -48,7 +50,7 @@
 		6EF34C6320A14227002A4ED8 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		6EF34C6520A14241002A4ED8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6EF34C6720A14261002A4ED8 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		6EF34C6920A1427C002A4ED8 /* IdnexViewModelq.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdnexViewModelq.swift; sourceTree = "<group>"; };
+		6EF34C6920A1427C002A4ED8 /* RMBQuoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMBQuoteViewModel.swift; sourceTree = "<group>"; };
 		6EF34C6D20A14344002A4ED8 /* APIServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServer.swift; sourceTree = "<group>"; };
 		8BC355558C740108E62E4B68 /* Pods-ExchangeRate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExchangeRate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ExchangeRate/Pods-ExchangeRate.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -114,7 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				6EF34C6120A14214002A4ED8 /* CurrencyCodeViewModel.swift */,
-				6EF34C6920A1427C002A4ED8 /* IdnexViewModelq.swift */,
+				6EF34C6920A1427C002A4ED8 /* RMBQuoteViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -134,6 +136,7 @@
 		6EF34C5020A1408C002A4ED8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6E921D5120A3045300D54B72 /* IndexeCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -287,6 +291,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -321,11 +326,12 @@
 				6EF34C6E20A14344002A4ED8 /* APIServer.swift in Sources */,
 				6EF34C6620A14241002A4ED8 /* ViewController.swift in Sources */,
 				6EF34C6220A14214002A4ED8 /* CurrencyCodeViewModel.swift in Sources */,
+				6E921D5220A3045300D54B72 /* IndexeCollectionViewCell.swift in Sources */,
 				6EF34C6420A14227002A4ED8 /* ViewModel.swift in Sources */,
 				6EF34C5B20A140F0002A4ED8 /* RmbquotModel.swift in Sources */,
 				6EF34C5F20A140FF002A4ED8 /* CurrencyCodeModel.swift in Sources */,
 				6EF34C6820A14261002A4ED8 /* Model.swift in Sources */,
-				6EF34C6A20A1427C002A4ED8 /* IdnexViewModelq.swift in Sources */,
+				6EF34C6A20A1427C002A4ED8 /* RMBQuoteViewModel.swift in Sources */,
 				6EF34C5920A140F0002A4ED8 /* CurrencyCodeViewController.swift in Sources */,
 				6E921D4C20A27DE500D54B72 /* ResponseModel.swift in Sources */,
 				6E921D4E20A2D4D000D54B72 /* Observable+ObjectMapper.swift in Sources */,
@@ -480,10 +486,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ExchangeRate/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = yuling.ExchangeRate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -500,10 +503,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ExchangeRate/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = yuling.ExchangeRate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
