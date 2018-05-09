@@ -8,12 +8,14 @@
 
 import UIKit
 import ObjectMapper
+import Moya
+import RxSwift
 
 
 class CurrencyCodeViewController: UIViewController {
 
     var viewModel:CurrencyCodeViewModel = CurrencyCodeViewModel.init()
-    
+    let dis = DisposeBag()
     
    lazy var tableView:UITableView = {
             let tab = UITableView.init(frame: self.view.bounds, style: .grouped)
@@ -23,23 +25,33 @@ class CurrencyCodeViewController: UIViewController {
         
     }()
     func loadList() {
-        ApiNetwork.request(target: .currencyQuery, success: { (result ) in
-            self.viewModel.list = Mapper<CurrencyCodeModel>().mapArray(JSONArray: result.result as! [[String : Any]])
-            self.tableView.reloadData()
-        }) { (error) in
-            print(error)
-        };
         
+//        ApiNetwork.request(target: .currencyQuery, success: { (result ) in
+//            self.viewModel.list = Mapper<CurrencyCodeModel>().mapArray(JSONArray: result.result as! [[String : Any]])
+//            self.tableView.reloadData()
+//        }) { (error) in
+//            print(error)
+//        };
+        
+           viewModel.loadList().subscribe(onNext: { [weak self] (result) in
+                print(result)
+                self?.tableView.reloadData()
+            }, onError: { (error) in
+                print(error)
+            }, onCompleted: {
+                
+            }) {
+            
+            }.disposed(by: dis)
+
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "货币汇总"
         self.view.addSubview(self.tableView)
         self.loadList()
-        
         // Do any additional setup after loading the view.
     }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

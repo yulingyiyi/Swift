@@ -21,6 +21,7 @@ struct ApiNetwork {
     
     // 单例
     static let provider = MoyaProvider<APIServer>()
+    
     // 发送网络请求
     static func request(
         target: APIServer,
@@ -32,9 +33,9 @@ struct ApiNetwork {
             case let .success(moyaResponse):
                 do {
                     try success(Mapper<ResponseModel>().map(JSONObject:moyaResponse.mapJSON())!) // 测试用JSON数据
-                    
+
                 } catch {
-                    
+
                     failure(MoyaError.jsonMapping(moyaResponse))
                 }
             case let .failure(error):
