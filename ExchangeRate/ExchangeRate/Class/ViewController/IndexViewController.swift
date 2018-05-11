@@ -11,13 +11,14 @@ import RxSwift
 import RxCocoa
 
 
+
 class IndexViewController: ViewController {
     let viewModel = RMBQuoteViewModel()
     let dis = DisposeBag()
     lazy var collectionView:UICollectionView = {
         let coll = UICollectionView.init(frame: self.view.bounds, collectionViewLayout: UICollectionViewFlowLayout.init())
         coll.register(IndexeCollectionViewCell.classForCoder(), forCellWithReuseIdentifier: "cell")
-        coll.backgroundColor = mainColor
+        coll.backgroundColor = UIColor.clear
         coll.contentInset = UIEdgeInsetsMake(10, 10, 10, 10)
         coll.delegate = self
         coll.dataSource = self
@@ -27,9 +28,9 @@ class IndexViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "牌价"
-        self.view.backgroundColor = UIColor.white
         self.navView()
         self.view.addSubview(self.collectionView)
+        self.refreshLoadView()
          loadViewModel()
         viewModel.updateList(banKCode: viewModel.bankCode).subscribe(onNext: { [weak self](code) in
             self?.loadViewModel()
@@ -41,6 +42,17 @@ class IndexViewController: ViewController {
             
         }.disposed(by: self.dis)
         // Do any additional setup after loading the view.
+    }
+    func refreshLoadView() {
+      
+        let header = MJRefreshNormalHeader()
+        header.setRefreshingTarget(self, refreshingAction: #selector(headerRefresh))
+        collectionView.mj_header = header
+    }
+    @objc func headerRefresh(){
+          sleep(2)
+          collectionView.mj_header.endRefreshing()
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

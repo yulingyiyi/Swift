@@ -34,6 +34,7 @@
 /* Begin PBXFileReference section */
 		3471889E1A17A364CDB61A6E /* Pods_ExchangeRate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExchangeRate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		38BF7D5519AA7219C92D49A5 /* Pods-ExchangeRate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExchangeRate.release.xcconfig"; path = "Pods/Target Support Files/Pods-ExchangeRate/Pods-ExchangeRate.release.xcconfig"; sourceTree = "<group>"; };
+		6E810C2520A54B5B00DA0B41 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		6E921D4B20A27DE500D54B72 /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
 		6E921D4D20A2D4D000D54B72 /* Observable+ObjectMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+ObjectMapper.swift"; sourceTree = "<group>"; };
 		6E921D5120A3045300D54B72 /* IndexeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexeCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -110,6 +111,7 @@
 				6EF34C4020A12E46002A4ED8 /* Assets.xcassets */,
 				6EF34C4220A12E46002A4ED8 /* LaunchScreen.storyboard */,
 				6EF34C4520A12E46002A4ED8 /* Info.plist */,
+				6E810C2520A54B5B00DA0B41 /* Header.h */,
 			);
 			path = ExchangeRate;
 			sourceTree = "<group>";
@@ -295,6 +297,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ExchangeRate/Pods-ExchangeRate-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
@@ -305,6 +308,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
@@ -512,6 +516,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = yuling.ExchangeRate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/ExchangeRate/Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -529,6 +534,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = yuling.ExchangeRate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/ExchangeRate/Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
