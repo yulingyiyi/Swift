@@ -10,27 +10,27 @@ import ObjectMapper
 
 class RmbquotModel: Model {
 //    银行代码
-    var bank:NSString?
+    var bank:String?
 //    银行折算价(中间价)
-    var bankConversionPri:NSString?
+    var bankConversionPri:String?
 //    银行名称
-    var bankName:NSString?
+    var bankName:String?
 //    币种代码
-    var currencyCode:NSString?
+    var currencyCode:String?
 //    币种名称
-    var currencyName:NSString?
+    var currencyName:String?
 //    发布日期
-    var date:NSString?
+    var date:String?
 //    现汇买入价
-    var fBuyPri:NSString?
+    var fBuyPri:String?
 //    现汇卖出价
-    var fSellPri:NSString?
+    var fSellPri:String?
 //   现钞买入价
-    var mBuyPri:NSString?
+    var mBuyPri:String?
 //   现钞卖出价
-    var mSellPri:NSString?
+    var mSellPri:String?
 //    发布时间
-    var time:NSString?
+    var time:String?
 
     override func mapping(map: Map) {
         bank <- map["bank"]

@@ -13,12 +13,15 @@ import ObjectMapper
 
 class RMBQuoteViewModel: ViewModel {
     public  var list:[RmbquotModel] = [RmbquotModel]()
+    ///中国银行
+    public  var bankCode:String = "3"
+    var publishSubject:PublishSubject<String>?
     
     
-    func loadList(bank: String) -> Observable<ResponseModel> {
+    func loadList() -> Observable<ResponseModel> {
             return  Observable.create({ [weak self] (observable) -> Disposable in
                 let provider = MoyaProvider<APIServer>()
-                let callBack = provider.request(APIServer.rmbquotQuery(bank), completion: { (responseResult) in
+                let callBack = provider.request(APIServer.rmbquotQuery((self?.bankCode)!), completion: { (responseResult) in
                     switch responseResult {
                     case let .success(response):
                         do {
@@ -38,7 +41,16 @@ class RMBQuoteViewModel: ViewModel {
             })
             
         }
-        
+    
+    func updateList(banKCode:String) -> PublishSubject<String> {
+        self.bankCode = banKCode
+        if self.publishSubject == nil
+        {
+            self.publishSubject = PublishSubject<String>()
+        }
+        return self.publishSubject!
+    }
+    
         
 }
 

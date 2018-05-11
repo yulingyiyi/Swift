@@ -73,8 +73,8 @@ extension APIServer: TargetType {
     }
     var task: Task {
         switch self {
-            case let .rmbquotQuery(code):
-                return .requestParameters(parameters: ["key" : MobAppkey,"code" : code], encoding: URLEncoding.default)
+            case let .rmbquotQuery(bank):
+                return .requestParameters(parameters: ["key" : MobAppkey,"bank" : bank], encoding: URLEncoding.default)
             case .currencyQuery:
                 return .requestParameters(parameters: ["key" : MobAppkey], encoding: URLEncoding.default)
             case let .codeQuery(code):
