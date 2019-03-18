@@ -1,0 +1,35 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'App' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for App
+
+  #RxSwift
+  pod 'RxSwift',    '4.0'
+  pod 'RxCocoa',    '4.0'
+  #布局
+  pod 'SnapKit',    '4.0.0'
+  #网络层
+  pod 'Moya/RxSwift', '12.0'
+  pod 'ObjectMapper', '3.4'
+  #Toast
+  pod 'Toast-Swift', '4.0.0'
+  #权限
+  pod 'RxPermission', '0.2'
+  
+  
+  
+  target 'AppTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'AppUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
